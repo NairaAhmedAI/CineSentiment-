@@ -70,7 +70,7 @@ Each model was trained using **TF-IDF** or **Bag-of-Words** representations, the
 ## 🛠️ Tools & Libraries
 | Category            | Libraries                                                                 |
 |---------------------|----------------------------------------------------------------------------|
-| Data Handling       | pandas, numpy                                                              |
+| Data Handling       | pandas, numpy                                                            |
 | Visualization       | matplotlib, seaborn                                                        |
 | ML Models           | scikit-learn (Logistic Regression, Naive Bayes, SVM, Random Forest)        |
 | NLP Preprocessing   | nltk (tokenization, stopwords removal, lemmatization, POS tagging, etc.)   |
@@ -81,10 +81,11 @@ Each model was trained using **TF-IDF** or **Bag-of-Words** representations, the
 
 | Model                           | Accuracy  | Key Points                                                                 |
 |---------------------------------|-----------|----------------------------------------------------------------------------|
-| **Logistic Regression (TF-IDF)** 🎯 | **89.11%** | - Balanced & interpretable <br> - Robust for text classification <br> - Confusion Matrix:<br> • TN: 4342 • TP: 4569 <br> • FP: 619 • FN: 470 |
+| **Logistic Regression (TF-IDF)** 🎯 | **89.11%** | - Balanced & interpretable <br> - Robust for text classification <br> - Applied **Custom Threshold = 0.6** <br> → Outputs 3 labels: Positive / Negative / Neutral <br> - Code snippet: <br> ```python<br>from sklearn.linear_model import LogisticRegression<br>my_model = LogisticRegression(max_iter=2000)<br>my_model.fit(X_train_tfidf, y_train)<br>y_probs = my_model.predict_proba(X_test_tfidf)<br><br>def custom_predict(probs, threshold=0.6):<br>    preds = []<br>    for p in probs:<br>        prob_neg, prob_pos = p<br>        if prob_pos >= threshold:<br>            preds.append("Positive")<br>        elif prob_neg >= threshold:<br>            preds.append("Negative")<br>        else:<br>            preds.append("Neutral")<br>    return preds<br>``` <br> - Confusion Matrix:<br> • TN: 4342 • TP: 4569 <br> • FP: 619 • FN: 470 |
 | **Naive Bayes**                 | 85.27%    | - Lightweight & fast <br> - Solid baseline model <br> - Works best on simpler datasets |
 | **Support Vector Machine (SVM)** ⭐ | **89.38%** | - Handles high-dimensional text data <br> - Strong generalization ability <br> - Best trade-off for real-world use |
 | **Random Forest**               | 86.12%    | - Captures non-linear relationships <br> - Reduces overfitting <br> - Provides feature importance |
+
 
 ---
 
