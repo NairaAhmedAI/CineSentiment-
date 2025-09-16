@@ -60,13 +60,51 @@ It provides tools for:
 
 Its flexibility and ease of use make it an excellent choice for preprocessing in text classification projects like this one.  
 
+# 🤖 Machine Learning Models
+
+After preprocessing the IMDB dataset, we trained several **classical machine learning models** to classify movie reviews as **positive** or **negative**.  
+Each model was trained using **TF-IDF** or **Bag-of-Words** representations, then evaluated on the test set.
+
 ---
 
-📌 *Next steps: Feature extraction (TF-IDF, Word Embeddings) and building Machine Learning & Deep Learning models.*  
+## 🛠️ Tools & Libraries
+| Category            | Libraries                                                                 |
+|---------------------|----------------------------------------------------------------------------|
+| Data Handling       | pandas, numpy                                                              |
+| Visualization       | matplotlib, seaborn                                                        |
+| ML Models           | scikit-learn (Logistic Regression, Naive Bayes, SVM, Random Forest)        |
+| NLP Preprocessing   | nltk (tokenization, stopwords removal, lemmatization, POS tagging, etc.)   |
 
+---
 
-🔹 Logistic Regression → Balanced, robust & interpretable
+## 📊 Model Training & Results  
 
-🔹 SVM → Best trade-off between accuracy & generalization → ⭐ Recommended model
+| Model                           | Accuracy  | Key Points                                                                 |
+|---------------------------------|-----------|----------------------------------------------------------------------------|
+| **Logistic Regression (TF-IDF)** 🎯 | **89.11%** | - Balanced & interpretable <br> - Robust for text classification <br> - Confusion Matrix:<br> • TN: 4342 • TP: 4569 <br> • FP: 619 • FN: 470 |
+| **Naive Bayes**                 | 85.27%    | - Lightweight & fast <br> - Solid baseline model <br> - Works best on simpler datasets |
+| **Support Vector Machine (SVM)** ⭐ | **89.38%** | - Handles high-dimensional text data <br> - Strong generalization ability <br> - Best trade-off for real-world use |
+| **Random Forest**               | 86.12%    | - Captures non-linear relationships <br> - Reduces overfitting <br> - Provides feature importance |
 
-🔹 Random Forest → Useful for feature importance & non-linear patterns
+---
+
+## 📊 Model Comparison Chart
+
+| Model                | Logistic Regression | Naive Bayes | SVM   | Random Forest |
+|----------------------|---------------------|-------------|-------|---------------|
+| **Accuracy (%)**     | 89.11               | 85.27       | 89.38 | 86.12         |
+
+📌 **SVM achieved the highest accuracy (89.38%) and is considered the most suitable model for deployment.**
+
+---
+
+## 📈 Visualization
+
+- **Confusion Matrices** were plotted for each model to analyze classification errors.  
+- **Accuracy Comparison Bar Chart** clearly shows SVM and Logistic Regression outperforming other models.  
+
+![Model Comparison Chart](path_to_your_chart.png)
+
+---
+
+✅ Next step: Extend to **Deep Learning models** (LSTM, Bi-LSTM, CNN, Transformers).
