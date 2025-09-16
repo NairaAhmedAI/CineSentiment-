@@ -108,4 +108,38 @@ Each model was trained using **TF-IDF** or **Bag-of-Words** representations, the
 
 ---
 
-✅ Next step: Extend to **Deep Learning models** (LSTM, Bi-LSTM, CNN, Transformers).
+## 📊 Deep Learning Models Training & Results  
+
+### 🔹 BiLSTM (Bidirectional LSTM)  
+- Achieved **Test Accuracy = 88.55%** 🎯  
+- Training showed steady improvement with strong convergence.  
+- Best performance around **Epoch 3–4**, after which validation loss slightly increased (early stopping prevented overfitting).  
+
+**Training Snapshot:**  
+- Epoch 1 → Accuracy: 76.17% | Val Accuracy: 86.44%  
+- Epoch 2 → Accuracy: 90.30% | Val Accuracy: 88.55%  
+- Epoch 3 → Accuracy: 93.05% | Val Accuracy: 88.78%  
+- Final Test Accuracy → **88.55%**  
+
+---
+
+### 🔹 Deep CNN for Text  
+- Achieved **Test Accuracy = 87.18%** ⭐  
+- Learned local n-gram features effectively but slightly less stable on validation data compared to BiLSTM.  
+- Peaked around **Epoch 3**, then validation accuracy plateaued.  
+
+**Training Snapshot:**  
+- Epoch 1 → Accuracy: 67.16% | Val Accuracy: 84.51%  
+- Epoch 2 → Accuracy: 90.07% | Val Accuracy: 86.07%  
+- Epoch 3 → Accuracy: 94.19% | Val Accuracy: 87.18%  
+- Final Test Accuracy → **87.18%**  
+
+---
+
+### 📊 Comparison of Deep Models  
+
+| Model       | Test Accuracy | Key Notes                                                                 |
+|-------------|--------------|---------------------------------------------------------------------------|
+| **BiLSTM**  | **88.55%** 🎯 | - Strong contextual understanding <br> - Best performance, less overfitting |
+| **CNN**     | 87.18% ⭐    | - Captures local n-gram features <br> - Faster training, slightly lower accuracy |
+
