@@ -106,8 +106,7 @@ Each model was trained using **TF-IDF** or **Bag-of-Words** representations, the
 - **Confusion Matrices** were plotted for each model to analyze classification errors.  
 - **Accuracy Comparison Bar Chart** clearly shows SVM and Logistic Regression outperforming other models.  
 
-![Model Comparison Chart](<img width="1253" height="662" alt="image" src="https://github.com/user-attachments/assets/c12660d3-837b-4369-99b1-1467267b5532" />
-)
+![Model Comparison Chart](<img width="1253" height="662" alt="image" src="https://github.com/user-attachments/assets/c12660d3-837b-4369-99b1-1467267b5532" />)
 
 ---
 
