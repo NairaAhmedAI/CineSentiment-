@@ -1,4 +1,5 @@
 # CineSentiment🎬- Sentiment Analysis on IMDB Movie Reviews  
+Check out the **live Streamlit demo** here: [CineSentiment App](https://e5zt7dvjjxiioxe2sbutcu.streamlit.app/) 🚀
 
 ## 📌 Overview  
 This project focuses on **Sentiment Analysis** of IMDB movie reviews, a classic **Natural Language Processing (NLP)** task.  
@@ -143,4 +144,53 @@ Each model was trained using **TF-IDF** or **Bag-of-Words** representations, the
 |-------------|--------------|---------------------------------------------------------------------------|
 | **BiLSTM**  | **88.55%** 🎯 | - Strong contextual understanding <br> - Best performance, less overfitting |
 | **CNN**     | 87.18% ⭐    | - Captures local n-gram features <br> - Faster training, slightly lower accuracy |
+
+🎬 CineSentiment – Movie Review Sentiment Analysis (Streamlit App)
+🛠️ Tools & Libraries
+Category	Libraries / Tools
+Web App	streamlit
+ML Model	`scikit-learn` (Logistic Regression, TF-IDF vectorizer)
+Data Handling	`numpy`, `pandas`  
+Serialization	`pickle`
+🚀 Overview
+
+CineSentiment is a real-time web application that predicts the sentiment of movie reviews as Positive, Negative, or Neutral. The app is powered by a Logistic Regression model trained on TF-IDF features. It leverages Streamlit for an interactive and visually appealing interface.
+
+🔹 How it Works
+
+User Input: Users type or paste a movie review in the text area.
+
+Text Processing: The input is transformed using the saved TF-IDF vectorizer.
+
+Prediction:
+
+Logistic Regression predicts the sentiment probabilities.
+
+A custom threshold (0.6) is applied to classify reviews into:
+
+Positive (high confidence in positive sentiment)
+
+Negative (high confidence in negative sentiment)
+
+Neutral (uncertain cases)
+
+Output Display: Sentiment is shown dynamically with color-coded feedback:
+
+💚 Positive
+
+🔴 Negative
+
+🟡 Neutral
+
+🌈 Features
+
+Gradient animated background and styled buttons for better UX.
+
+Handles empty input gracefully with warnings.
+
+Works in real-time for instant sentiment feedback.
+
+📌 Conclusion
+
+This Streamlit application brings the machine learning model to life, providing users with an interactive way to analyze movie reviews instantly. The combination of custom thresholds, real-time predictions, and a friendly interface makes CineSentiment both educational and practical for exploring NLP-based sentiment analysis.
 
