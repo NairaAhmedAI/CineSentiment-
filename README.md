@@ -1,136 +1,69 @@
-‎# 📌 NLP Project - Logistic Regression with TF-IDF
+# 🎬 Sentiment Analysis on IMDB Movie Reviews  
 
-📂 project-name
- ┣ 📂 notebooks        # Jupyter notebooks للتجارب
- ┣ 📂 app              # كود FastAPI
- ┣ 📂 models           # النماذج المدربة
- ┣ 📂 data             # البيانات (غير مرفوعة)
- ┣ requirements.txt
- ┣ README.md
+## 📌 Overview  
+This project focuses on **Sentiment Analysis** of IMDB movie reviews, a classic **Natural Language Processing (NLP)** task.  
+The main objective is to classify each review as either **Positive** or **Negative** by building a complete pipeline that covers:  
 
-‎## 🛠️ Imports & Preprocessing
+- Data Collection  
+- Text Preprocessing  
+- Machine Learning & Deep Learning Models (next steps)  
 
-‎- **Imported Libraries**:  ‎
-‎  - `pandas`, `numpy` → Data manipulation and numerical operations  ‎
-‎  - `matplotlib`, `seaborn` → Data visualization and charts  ‎
-‎  - `sklearn` → Machine learning (TF-IDF, Logistic Regression, ‎evaluation metrics)  ‎
-‎  - `nltk` → Text preprocessing (stopwords removal, tokenization, ‎etc.)  ‎
+By leveraging NLP techniques, we aim to transform raw unstructured text into clean and meaningful representations that can be used for predictive modeling.  
 
-‎- **Preprocessing Steps**:  ‎
-‎  - Converted text to lowercase  ‎
-‎  - Removed punctuation, numbers, and irrelevant symbols  ‎
-‎  - Removed stopwords for cleaner representation  ‎
-‎  - Applied tokenization for splitting text into words  ‎
-‎  - Prepared the cleaned data for TF-IDF feature extraction  ‎
+---
 
-‎---‎
+## 📊 Dataset  
+We used the **IMDB Dataset of 50K Movie Reviews**, which contains **25,000 positive** and **25,000 negative** reviews.  
+This dataset is widely used for benchmarking sentiment classification models.  
 
+📥 Dataset link: [IMDB 50K Movie Reviews - Kaggle](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)  
 
-‎## 📖 Overview
-This project applies **text preprocessing** and **machine learning** ‎techniques to classify text using **Logistic Regression** with **TF-‎IDF features**.  ‎
-The workflow includes:‎
-‎- Data cleaning and preprocessing  ‎
-‎- Feature extraction with TF-IDF  ‎
-‎- Logistic Regression model training  ‎
-‎- Evaluation using accuracy and confusion matrix  ‎
-‎- Visualization with WordCloud and bar charts  ‎
+---
 
-‎---‎
+## 🛠 Data Preprocessing  
 
-‎## 📊 Model Performance
+Preprocessing is a critical step in NLP as raw text is often noisy and inconsistent. We applied several transformations to prepare the dataset:  
 
-‎- **Accuracy Achieved**: **89.11%** 🎯
+### 1️⃣ Lowercasing  
+All reviews were converted to lowercase to maintain consistency and avoid duplication caused by case sensitivity.  
 
-‎### ✅ Confusion Matrix (Logistic Regression - TF-IDF)‎
+### 2️⃣ Label Encoding  
+The target variable (**sentiment**) was encoded into numeric values:  
+- `0` → Negative  
+- `1` → Positive  
 
-‎|                | Predicted Negative | Predicted Positive |‎
-‎|----------------|--------------------|--------------------|‎
-‎| **Actual Negative** | **4342** (True Negative) | **619** (False ‎Positive) |‎
-‎| **Actual Positive** | **470** (False Negative) | **4569** (True ‎Positive) |‎
+### 3️⃣ Cleaning (Regex-based)  
+- Removed **emojis** and **hashtags**  
+- Removed HTML tags such as `<br>`  
+- Normalized text by stripping unnecessary characters  
 
-🔹 **Interpretation**:  ‎
-‎- The model correctly predicted **4342 negatives** and **4569 ‎positives**.  ‎
-‎- **619 samples** were misclassified as Positive (False Positives).  ‎
-‎- **470 samples** were misclassified as Negative (False Negatives).  ‎
+### 4️⃣ Tokenization & Stopword Removal  
+Using **NLTK**, we split sentences into individual tokens (words).  
+Stopwords (e.g., *is, the, and*) were removed to reduce noise, but **negation words** (e.g., *not, no*) were kept as they strongly influence sentiment.  
 
-‎---‎
+### 5️⃣ Lemmatization with POS Tagging  
+- Applied **Part-of-Speech (POS) tagging** to identify word categories (noun, verb, adjective, adverb).  
+- Used **WordNet Lemmatizer** from NLTK to reduce words to their base form (e.g., *running → run*, *better → good*).  
 
-‎## 📈 Visualizations
+This step ensures that semantically similar words are treated the same way, improving model generalization.  
 
-‎### ☁️ Word Cloud
-The Word Cloud highlights the most frequent words in the dataset after ‎preprocessing.  ‎
-It provides an intuitive view of the **key terms** that dominate the ‎corpus, which helps in understanding the text distribution.  ‎
+---
 
-‎### 📊 Bar Charts
-The bar charts visualize the **distribution of labels** and other ‎dataset characteristics.  ‎
-They help check for **class balance** and general text statistics.‎
+## 🔑 Why NLTK?  
+The **Natural Language Toolkit (NLTK)** is a powerful and widely-used Python library for NLP.  
+It provides tools for:  
+- Tokenization  
+- Stopword filtering  
+- POS tagging  
+- Lemmatization  
+- Corpora and lexical resources (WordNet)  
 
-‎---‎
+Its flexibility and ease of use make it an excellent choice for preprocessing in text classification projects like this one.  
 
-‎## 🔎 TF-IDF Explanation
+---
 
-‎**TF-IDF** = **Term Frequency – Inverse Document Frequency**  ‎
+📌 *Next steps: Feature extraction (TF-IDF, Word Embeddings) and building Machine Learning & Deep Learning models.*  
 
-‎- **TF (Term Frequency):** How often a word appears in a document.  ‎
-‎- **IDF (Inverse Document Frequency):** How unique or rare the word is ‎across all documents.  ‎
-‎- Final TF-IDF score = **TF × IDF**, giving higher weight to ‎important, distinguishing words.  ‎
-
-👉 This ensures that common words like *"the"*, *"and"* get **lower ‎weight**, while unique, informative words get **higher importance**.‎
-
-‎---‎
-
-‎## ➕ Custom Threshold & Neutral Class
-
-By default, Logistic Regression predicts only **Positive** or ‎‎**Negative**.  ‎
-A **custom threshold strategy** was added to introduce a **third ‎class: Neutral**.  ‎
-
-‎### 🔹 How it works:‎
-‎- If the probability for Positive ≥ 0.6 → classify as **Positive**  ‎
-‎- If the probability for Negative ≥ 0.6 → classify as **Negative**  ‎
-‎- Otherwise → classify as **Neutral**  ‎
-
-‎### 🌟 Benefit:‎
-This prevents forcing uncertain cases into Positive/Negative and ‎instead assigns them as **Neutral**.  ‎
-It is especially valuable in **Sentiment Analysis**, where some text ‎may not strongly express either polarity.‎
-
-‎---‎
-
-
-✅ Extract features with TF-IDF Vectorizer
-
-📊 Model Training & Results
-Model	Accuracy	Key Points
-Logistic Regression (TF-IDF)	89.11% 🎯	- Balanced & interpretable
-- Robust for text classification
-- Confusion Matrix:
-• TN: 4342 • TP: 4569
-• FP: 619 • FN: 470
-Naive Bayes	85.27%	- Lightweight & fast
-- Solid baseline model
-- Works best on simpler datasets
-Support Vector Machine (SVM)	89.38% ⭐	- Handles high-dimensional text data
-- Strong generalization ability
-- Best trade-off for real-world use
-Random Forest	86.12%	- Captures non-linear relationships
-- Reduces overfitting
-- Provides feature importance
-📊 Model Comparison Chart
-Model	Logistic Regression	Naive Bayes	SVM	Random Forest
-Accuracy (%)	89.11	85.27	89.38	86.12
-
-📌 SVM achieved the highest accuracy (89.38%) and is the most suitable model for deployment.
-
-📈 Visualizations
-
-☁️ WordCloud → Highlights most frequent words
-
-📊 Bar Charts → Show dataset distribution & balance
-
-📉 Accuracy Plot → Compare models side by side
-
-✅ Conclusion
-
-🔹 Naive Bayes → Good baseline, fast & lightweight
 
 🔹 Logistic Regression → Balanced, robust & interpretable
 
