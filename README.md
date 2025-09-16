@@ -1,4 +1,4 @@
-# 🎬 Sentiment Analysis on IMDB Movie Reviews  
+# CineSentiment🎬- Sentiment Analysis on IMDB Movie Reviews  
 
 ## 📌 Overview  
 This project focuses on **Sentiment Analysis** of IMDB movie reviews, a classic **Natural Language Processing (NLP)** task.  
@@ -81,10 +81,7 @@ Each model was trained using **TF-IDF** or **Bag-of-Words** representations, the
 
 | Model                           | Accuracy  | Key Points                                                                 |
 |---------------------------------|-----------|----------------------------------------------------------------------------|
-| Model                           | Accuracy  | Key Points                                                                 |
-|---------------------------------|-----------|----------------------------------------------------------------------------|
 | **Logistic Regression (TF-IDF)** 🎯 | **89.11%** | - Balanced & interpretable <br> - Robust for text classification <br> - Implemented a **Custom Threshold = 0.6** instead of the default 0.5. <br> - This adjustment allowed the model to classify reviews into **three categories**: <br> • **Positive** (high confidence in positive sentiment) <br> • **Negative** (high confidence in negative sentiment) <br> • **Neutral** (when neither class exceeds the threshold, capturing uncertain cases) <br> - Confusion Matrix:<br> • TN: 4342 • TP: 4569 <br> • FP: 619 • FN: 470 |
-
 | **Naive Bayes**                 | 85.27%    | - Lightweight & fast <br> - Solid baseline model <br> - Works best on simpler datasets |
 | **Support Vector Machine (SVM)** ⭐ | **89.38%** | - Handles high-dimensional text data <br> - Strong generalization ability <br> - Best trade-off for real-world use |
 | **Random Forest**               | 86.12%    | - Captures non-linear relationships <br> - Reduces overfitting <br> - Provides feature importance |
