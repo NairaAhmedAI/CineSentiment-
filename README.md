@@ -1,5 +1,12 @@
 ‎# 📌 NLP Project - Logistic Regression with TF-IDF
 
+📂 project-name
+ ┣ 📂 notebooks        # Jupyter notebooks للتجارب
+ ┣ 📂 app              # كود FastAPI
+ ┣ 📂 models           # النماذج المدربة
+ ┣ 📂 data             # البيانات (غير مرفوعة)
+ ┣ requirements.txt
+ ┣ README.md
 
 ‎## 🛠️ Imports & Preprocessing
 
