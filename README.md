@@ -154,7 +154,7 @@ Data Handling	`numpy`, `pandas`
 Serialization	`pickle`
 
 
-##🚀 Overview
+## 🚀 Overview
 
 CineSentiment is a real-time web application that predicts the sentiment of movie reviews as Positive, Negative, or Neutral. The app is powered by a Logistic Regression model trained on TF-IDF features. It leverages Streamlit for an interactive and visually appealing interface.
 
@@ -190,7 +190,7 @@ Handles empty input gracefully with warnings.
 
 Works in real-time for instant sentiment feedback.
 
-##📌 Conclusion
+## 📌 Conclusion
 
 This Streamlit application brings the machine learning model to life, providing users with an interactive way to analyze movie reviews instantly. The combination of custom thresholds, real-time predictions, and a friendly interface makes CineSentiment both educational and practical for exploring NLP-based sentiment analysis.
 
