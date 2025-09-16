@@ -51,7 +51,7 @@ This step ensures that semantically similar words are treated the same way, impr
 ---
 
 ## 🔑 Why NLTK?  
-The **Natural Language Toolkit (NLTK)** is a powerful and widely-used Python library for NLP.  
+The **Natural Language Toolkit **(`NLTK`)** is a powerful and widely-used Python library for NLP.  
 It provides tools for:  
 - Tokenization  
 - Stopword filtering  
