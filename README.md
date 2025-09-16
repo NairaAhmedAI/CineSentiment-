@@ -39,12 +39,12 @@ The target variable (**sentiment**) was encoded into numeric values:
 - Normalized text by stripping unnecessary characters  
 
 ### 4️⃣ Tokenization & Stopword Removal  
-Using **NLTK**, we split sentences into individual tokens (words).  
+Using `NLTK`, we split sentences into individual tokens (words).  
 Stopwords (e.g., *is, the, and*) were removed to reduce noise, but **negation words** (e.g., *not, no*) were kept as they strongly influence sentiment.  
 
 ### 5️⃣ Lemmatization with POS Tagging  
 - Applied **Part-of-Speech (POS) tagging** to identify word categories (noun, verb, adjective, adverb).  
-- Used **WordNet Lemmatizer** from NLTK to reduce words to their base form (e.g., *running → run*, *better → good*).  
+- Used **WordNet Lemmatizer** from `NLTK` to reduce words to their base form (e.g., *running → run*, *better → good*).  
 
 This step ensures that semantically similar words are treated the same way, improving model generalization.  
 
@@ -57,14 +57,14 @@ It provides tools for:
 - Stopword filtering  
 - POS tagging  
 - Lemmatization  
-- Corpora and lexical resources (WordNet)  
+- Corpora and lexical resources (`WordNet`)  
 
 Its flexibility and ease of use make it an excellent choice for preprocessing in text classification projects like this one.  
 
 # 🤖 Machine Learning Models
 
 After preprocessing the IMDB dataset, we trained several **classical machine learning models** to classify movie reviews as **positive** or **negative**.  
-Each model was trained using **TF-IDF** or **Bag-of-Words** representations, then evaluated on the test set.
+Each model was trained using **`TF-IDF`** or **Bag-of-Words** representations, then evaluated on the test set.
 
 ---
 # 🛠️ Tools & Libraries
@@ -83,7 +83,7 @@ Each model was trained using **TF-IDF** or **Bag-of-Words** representations, the
 
 | Model                           | Accuracy  | Key Points                                                                 |
 |---------------------------------|-----------|----------------------------------------------------------------------------|
-| **Logistic Regression (TF-IDF)** 🎯 | **89.11%** | - Balanced & interpretable <br> - Robust for text classification <br> - Implemented a **Custom Threshold = 0.6** instead of the default 0.5. <br> - This adjustment allowed the model to classify reviews into **three categories**: <br> • **Positive** (high confidence in positive sentiment) <br> • **Negative** (high confidence in negative sentiment) <br> • **Neutral** (when neither class exceeds the threshold, capturing uncertain cases) <br> - Confusion Matrix:<br> • TN: 4342 • TP: 4569 <br> • FP: 619 • FN: 470 |
+| **Logistic Regression (`TF-IDF`)** 🎯 | **89.11%** | - Balanced & interpretable <br> - Robust for text classification <br> - Implemented a **Custom Threshold = 0.6** instead of the default 0.5. <br> - This adjustment allowed the model to classify reviews into **three categories**: <br> • **Positive** (high confidence in positive sentiment) <br> • **Negative** (high confidence in negative sentiment) <br> • **Neutral** (when neither class exceeds the threshold, capturing uncertain cases) <br> - Confusion Matrix:<br> • TN: 4342 • TP: 4569 <br> • FP: 619 • FN: 470 |
 | **Naive Bayes**                 | 85.27%    | - Lightweight & fast <br> - Solid baseline model <br> - Works best on simpler datasets |
 | **Support Vector Machine (SVM)** ⭐ | **89.38%** | - Handles high-dimensional text data <br> - Strong generalization ability <br> - Best trade-off for real-world use |
 | **Random Forest**               | 86.12%    | - Captures non-linear relationships <br> - Reduces overfitting <br> - Provides feature importance |
@@ -156,7 +156,7 @@ Serialization	`pickle`
 
 ## 🚀 Overview
 
-CineSentiment is a real-time web application that predicts the sentiment of movie reviews as Positive, Negative, or Neutral. The app is powered by a Logistic Regression model trained on TF-IDF features. It leverages Streamlit for an interactive and visually appealing interface.
+CineSentiment is a real-time web application that predicts the sentiment of movie reviews as Positive, Negative, or Neutral. The app is powered by a Logistic Regression model trained on TF-IDF features. It leverages `Streamlit` for an interactive and visually appealing interface.
 
 **🔹 How it Works**
 
