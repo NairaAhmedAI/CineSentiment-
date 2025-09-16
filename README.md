@@ -1,105 +1,63 @@
-
 🎬 CineSentiment - Sentiment Analysis on IMDB Reviews
 📖 Overview
 
 CineSentiment 🎥 is a Natural Language Processing (NLP) project for sentiment analysis of IMDB movie reviews.
-The goal is to classify reviews into Positive, Negative, or Neutral sentiments using text preprocessing, TF-IDF feature extraction, and Machine Learning models.
-
-The project includes:
-
-Data cleaning and preprocessing
-
-Feature extraction with TF-IDF Vectorizer
-
-Training and evaluation of multiple ML models
-
-Visualizations (WordClouds, bar charts, and comparison plots)
+The project classifies reviews into Positive, Negative, or Neutral using TF-IDF feature extraction and multiple Machine Learning models.
 
 🛠️ Tools & Libraries
-
-pandas, numpy → Data handling and numerical operations
-
-matplotlib, seaborn → Data visualization
-
-scikit-learn (sklearn) → TF-IDF, Logistic Regression, Naive Bayes, SVM, Random Forest
-
-nltk → Text preprocessing (stopwords removal, tokenization, etc.)
-
+Category	Libraries
+Data Handling	pandas, numpy
+Visualization	matplotlib, seaborn
+ML Models	scikit-learn (Logistic Regression, Naive Bayes, SVM, Random Forest)
+NLP Preprocess	nltk (stopwords removal, tokenization, etc.)
 ⚙️ Preprocessing Steps
 
-✔️ Convert text to lowercase
-✔️ Remove punctuation, numbers, and special characters
-✔️ Remove stopwords
-✔️ Apply tokenization
-✔️ Extract features using TF-IDF Vectorizer
+✅ Convert text to lowercase
+
+✅ Remove punctuation, numbers, special characters
+
+✅ Remove stopwords
+
+✅ Apply tokenization
+
+✅ Extract features with TF-IDF Vectorizer
 
 📊 Model Training & Results
+Model	Accuracy	Key Points
+Logistic Regression (TF-IDF)	89.11% 🎯	- Balanced & interpretable
+- Robust for text classification
+- Confusion Matrix:
+• TN: 4342 • TP: 4569
+• FP: 619 • FN: 470
+Naive Bayes	85.27%	- Lightweight & fast
+- Solid baseline model
+- Works best on simpler datasets
+Support Vector Machine (SVM)	89.38% ⭐	- Handles high-dimensional text data
+- Strong generalization ability
+- Best trade-off for real-world use
+Random Forest	86.12%	- Captures non-linear relationships
+- Reduces overfitting
+- Provides feature importance
+📊 Model Comparison Chart
+Model	Logistic Regression	Naive Bayes	SVM	Random Forest
+Accuracy (%)	89.11	85.27	89.38	86.12
 
-After preprocessing and applying TF-IDF, four machine learning models were trained and compared:
+📌 SVM achieved the highest accuracy (89.38%) and is the most suitable model for deployment.
 
-🔹 Logistic Regression (TF-IDF)
+📈 Visualizations
 
-Accuracy: 89.11% 🎯
+☁️ WordCloud → Highlights most frequent words
 
-Strength: Balanced performance, interpretable, robust for text classification
+📊 Bar Charts → Show dataset distribution & balance
 
-Confusion Matrix:
-
-True Negatives: 4342
-
-True Positives: 4569
-
-False Positives: 619
-
-False Negatives: 470
-
-🔹 Naive Bayes
-
-Accuracy: 85.27%
-
-Strength: Lightweight and fast, provides a good baseline model
-
-Works best on smaller text datasets but less robust on complex text
-
-🔹 Support Vector Machine (SVM)
-
-Accuracy: 89.38%
-
-Strength: Handles high-dimensional data effectively, strong generalization ability
-
-Best trade-off between accuracy and generalization → most suitable for real-world use
-
-🔹 Random Forest
-
-Accuracy: 86.12%
-
-Strength: Reduces overfitting, captures non-linear relationships
-
-Provides feature importance insights
-
-📈 Model Comparison
-Model	Accuracy	Strength
-Logistic Regression	89.11%	Balanced, interpretable
-Naive Bayes	85.27%	Lightweight, fast baseline
-SVM	89.38%	Best trade-off, strong generalization
-Random Forest	86.12%	Non-linear patterns, feature importance
-
-📌 From the results, SVM showed the highest accuracy (89.38%) and strong generalization, making it the best candidate for deployment.
-
-📊 Visualizations
-
-WordCloud → Highlights most frequent words in the dataset
-
-Bar Charts → Distribution of classes and text statistics
-
-Accuracy Comparison Plot → Side-by-side performance of models
+📉 Accuracy Plot → Compare models side by side
 
 ✅ Conclusion
 
-Naive Bayes → good baseline
+🔹 Naive Bayes → Good baseline, fast & lightweight
 
-Logistic Regression → robust and interpretable
+🔹 Logistic Regression → Balanced, robust & interpretable
 
-SVM → best trade-off between accuracy & generalization (most recommended)
+🔹 SVM → Best trade-off between accuracy & generalization → ⭐ Recommended model
 
-Random Forest → useful for interpretability and non-linear patterns
+🔹 Random Forest → Useful for feature importance & non-linear patterns
