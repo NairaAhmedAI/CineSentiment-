@@ -158,7 +158,7 @@ Serialization	`pickle`
 
 CineSentiment is a real-time web application that predicts the sentiment of movie reviews as Positive, Negative, or Neutral. The app is powered by a Logistic Regression model trained on TF-IDF features. It leverages Streamlit for an interactive and visually appealing interface.
 
-🔹 How it Works
+**🔹 How it Works**
 
 User Input: Users type or paste a movie review in the text area.
 
@@ -168,7 +168,7 @@ Prediction:
 
 Logistic Regression predicts the sentiment probabilities.
 
-A custom threshold (0.6) is applied to classify reviews into:
+**A custom threshold (0.6) is applied to classify reviews into:**
 
 Positive (high confidence in positive sentiment)
 
@@ -176,13 +176,13 @@ Negative (high confidence in negative sentiment)
 
 Neutral (uncertain cases)
 
-Output Display: Sentiment is shown dynamically with color-coded feedback:
+**Output Display:** Sentiment is shown dynamically with color-coded feedback:
 
-😘 Positive
+**😘 Positive** 
 
-😒 Negative
+**😒 Negative**
 
-😐 Neutral
+**😐 Neutral**
 
 Gradient animated background and styled buttons for better UX.
 
