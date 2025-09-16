@@ -1,24 +1,93 @@
-🎬 CineSentiment - Sentiment Analysis on IMDB Reviews
-📖 Overview
+‎# 📌 NLP Project - Logistic Regression with TF-IDF
 
-CineSentiment 🎥 is a Natural Language Processing (NLP) project for sentiment analysis of IMDB movie reviews.
-The project classifies reviews into Positive, Negative, or Neutral using TF-IDF feature extraction and multiple Machine Learning models.
 
-🛠️ Tools & Libraries
-Category	Libraries
-Data Handling	pandas, numpy
-Visualization	matplotlib, seaborn
-ML Models	scikit-learn (Logistic Regression, Naive Bayes, SVM, Random Forest)
-NLP Preprocess	nltk (stopwords removal, tokenization, etc.)
-⚙️ Preprocessing Steps
+‎## 🛠️ Imports & Preprocessing
 
-✅ Convert text to lowercase
+‎- **Imported Libraries**:  ‎
+‎  - `pandas`, `numpy` → Data manipulation and numerical operations  ‎
+‎  - `matplotlib`, `seaborn` → Data visualization and charts  ‎
+‎  - `sklearn` → Machine learning (TF-IDF, Logistic Regression, ‎evaluation metrics)  ‎
+‎  - `nltk` → Text preprocessing (stopwords removal, tokenization, ‎etc.)  ‎
 
-✅ Remove punctuation, numbers, special characters
+‎- **Preprocessing Steps**:  ‎
+‎  - Converted text to lowercase  ‎
+‎  - Removed punctuation, numbers, and irrelevant symbols  ‎
+‎  - Removed stopwords for cleaner representation  ‎
+‎  - Applied tokenization for splitting text into words  ‎
+‎  - Prepared the cleaned data for TF-IDF feature extraction  ‎
 
-✅ Remove stopwords
+‎---‎
 
-✅ Apply tokenization
+
+‎## 📖 Overview
+This project applies **text preprocessing** and **machine learning** ‎techniques to classify text using **Logistic Regression** with **TF-‎IDF features**.  ‎
+The workflow includes:‎
+‎- Data cleaning and preprocessing  ‎
+‎- Feature extraction with TF-IDF  ‎
+‎- Logistic Regression model training  ‎
+‎- Evaluation using accuracy and confusion matrix  ‎
+‎- Visualization with WordCloud and bar charts  ‎
+
+‎---‎
+
+‎## 📊 Model Performance
+
+‎- **Accuracy Achieved**: **89.11%** 🎯
+
+‎### ✅ Confusion Matrix (Logistic Regression - TF-IDF)‎
+
+‎|                | Predicted Negative | Predicted Positive |‎
+‎|----------------|--------------------|--------------------|‎
+‎| **Actual Negative** | **4342** (True Negative) | **619** (False ‎Positive) |‎
+‎| **Actual Positive** | **470** (False Negative) | **4569** (True ‎Positive) |‎
+
+🔹 **Interpretation**:  ‎
+‎- The model correctly predicted **4342 negatives** and **4569 ‎positives**.  ‎
+‎- **619 samples** were misclassified as Positive (False Positives).  ‎
+‎- **470 samples** were misclassified as Negative (False Negatives).  ‎
+
+‎---‎
+
+‎## 📈 Visualizations
+
+‎### ☁️ Word Cloud
+The Word Cloud highlights the most frequent words in the dataset after ‎preprocessing.  ‎
+It provides an intuitive view of the **key terms** that dominate the ‎corpus, which helps in understanding the text distribution.  ‎
+
+‎### 📊 Bar Charts
+The bar charts visualize the **distribution of labels** and other ‎dataset characteristics.  ‎
+They help check for **class balance** and general text statistics.‎
+
+‎---‎
+
+‎## 🔎 TF-IDF Explanation
+
+‎**TF-IDF** = **Term Frequency – Inverse Document Frequency**  ‎
+
+‎- **TF (Term Frequency):** How often a word appears in a document.  ‎
+‎- **IDF (Inverse Document Frequency):** How unique or rare the word is ‎across all documents.  ‎
+‎- Final TF-IDF score = **TF × IDF**, giving higher weight to ‎important, distinguishing words.  ‎
+
+👉 This ensures that common words like *"the"*, *"and"* get **lower ‎weight**, while unique, informative words get **higher importance**.‎
+
+‎---‎
+
+‎## ➕ Custom Threshold & Neutral Class
+
+By default, Logistic Regression predicts only **Positive** or ‎‎**Negative**.  ‎
+A **custom threshold strategy** was added to introduce a **third ‎class: Neutral**.  ‎
+
+‎### 🔹 How it works:‎
+‎- If the probability for Positive ≥ 0.6 → classify as **Positive**  ‎
+‎- If the probability for Negative ≥ 0.6 → classify as **Negative**  ‎
+‎- Otherwise → classify as **Neutral**  ‎
+
+‎### 🌟 Benefit:‎
+This prevents forcing uncertain cases into Positive/Negative and ‎instead assigns them as **Neutral**.  ‎
+It is especially valuable in **Sentiment Analysis**, where some text ‎may not strongly express either polarity.‎
+
+‎---‎
+
 
 ✅ Extract features with TF-IDF Vectorizer
 
