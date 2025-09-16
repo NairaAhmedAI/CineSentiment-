@@ -66,14 +66,15 @@ After preprocessing the IMDB dataset, we trained several **classical machine lea
 Each model was trained using **TF-IDF** or **Bag-of-Words** representations, then evaluated on the test set.
 
 ---
+# 🛠️ Tools & Libraries
 
-## 🛠️ Tools & Libraries
 | Category            | Libraries                                                                 |
 |---------------------|----------------------------------------------------------------------------|
-| Data Handling       | pandas, numpy                                                            |
-| Visualization       | matplotlib, seaborn                                                        |
-| ML Models           | scikit-learn (Logistic Regression, Naive Bayes, SVM, Random Forest)        |
-| NLP Preprocessing   | nltk (tokenization, stopwords removal, lemmatization, POS tagging, etc.)   |
+| Data Handling       | `pandas`, `numpy`                                                          |
+| Visualization       | `matplotlib`, `seaborn`                                                    |
+| ML Models           | `scikit-learn` (Logistic Regression, Naive Bayes, SVM, Random Forest)      |
+| NLP Preprocessing   | `nltk` (tokenization, stopwords removal, lemmatization, POS tagging, etc.) |
+| Deep Learning       | 🔹 `TensorFlow / Keras` <br> 🔹 `NumPy` <br> 🔹 `scikit-learn` (for preprocessing & evaluation) |
 
 ---
 
