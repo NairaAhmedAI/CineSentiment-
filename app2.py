@@ -66,12 +66,12 @@ if st.button("Analyze Sentiment"):
         review_tfidf = tfidf.transform([review])
 
         # Get probabilities (works with Logistic Regression)
-        if hasattr(svm, "predict_proba"):
-            probs = svm.predict_proba(review_tfidf)[0]
+        if hasattr(ls, "predict_proba"):
+            probs = ls.predict_proba(review_tfidf)[0]
             prob_neg, prob_pos = probs
         else:
             # Fallback if model doesn’t support predict_proba
-            decision = svm.decision_function(review_tfidf)
+            decision = ls.decision_function(review_tfidf)
             prob_pos = 1 / (1 + np.exp(-decision[0]))
             prob_neg = 1 - prob_pos
 
@@ -82,3 +82,4 @@ if st.button("Analyze Sentiment"):
             st.error("😒 Sentiment: Negative")
         else:
             st.info("😐 Sentiment: Neutral")
+
