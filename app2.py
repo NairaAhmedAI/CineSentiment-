@@ -4,7 +4,7 @@ import numpy as np
 
 # Load the saved Logistic Regression model and TF-IDF vectorizer
 with open("final_logistic_regression.pkl", "rb") as f:
-    svm = pickle.load(f)
+    ls = pickle.load(f)
 
 with open("final_tfidf_vectorizer.pkl", "rb") as f:
     tfidf = pickle.load(f)
@@ -82,4 +82,5 @@ if st.button("Analyze Sentiment"):
             st.error("😒 Sentiment: Negative")
         else:
             st.info("😐 Sentiment: Neutral")
+
 
